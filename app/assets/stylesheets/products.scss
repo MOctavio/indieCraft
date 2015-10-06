@@ -1,3 +1,63 @@
-// Place all the styles related to the Products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$green: rgb(138, 193, 7);
+$gray: rgb(233, 233, 233);
+$light-gray: lighten($gray, 20%);
+
+.products {
+  h1 {
+    background-color: darken($gray, 60%);
+    line-height: 42px;
+    margin: 0px;
+    padding: 10px;
+    color: $light-gray;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: 8px;
+  }
+
+  table tr td {
+    padding: 5px;
+    vertical-align: top;
+  }
+
+  .list_image {
+    width: 60px;
+    height: 70px;
+    border-radius: 25px;
+    background: $green;
+    padding: 5px;
+  }
+
+  .list_description {
+    width: 60%;
+
+    dl {
+      margin: 0;
+    }
+
+    dt {
+      color: darken($gray, 60%);
+      font-weight: bold;
+      font-size: larger;
+    }
+
+    dd {
+      margin: 0;
+    }
+  }
+
+  .list_actions {
+    font-size: x-small;
+    text-align: right;
+    padding-left: 1em;
+  }
+
+  .list_line_even {
+    background: $light-gray;
+  }
+
+  .list_line_odd {
+    background: $gray;
+  }
+}
