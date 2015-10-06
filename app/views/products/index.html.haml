@@ -3,7 +3,7 @@
 %table
   %thead
     %tr
-      %th  title
+      %th Title
       %th Description
       %th Image url
       %th Price
@@ -14,7 +14,7 @@
   %tbody
     - @products.each do |product|
       %tr
-        %td= product. title
+        %td= product.title
         %td= product.description
         %td= product.image_url
         %td= product.price
