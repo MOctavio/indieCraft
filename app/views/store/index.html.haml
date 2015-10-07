@@ -1,2 +1,13 @@
-%h1 Store#index
-%p Find me in app/views/store/index.html.haml
+.pure-g
+  %h1.pure-u-1 Your Pragmatic Catalog
+  - if notice
+    %p#notice= notice
+  .products
+    - @products.each do |product|
+      .pure-u-1-8
+        .img-box
+          %p= image_tag(product.image_url, class: 'pure-img')
+      .pure-u-7-8
+        .list_description
+          %p.title= product.title
+          %p= truncate(strip_tags(product.description), length: 180)

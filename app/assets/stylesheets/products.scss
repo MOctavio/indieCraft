@@ -1,8 +1,6 @@
-$gray: rgb(233, 233, 233);
-$light-gray: lighten($gray, 40%);
+@import "variables";
 
 .products {
-
   h1 {
     background-color: darken(rgb(233, 233, 233), 60%);
     margin: 0;
@@ -29,7 +27,6 @@ $light-gray: lighten($gray, 40%);
   }
 
   [class*='pure-u']:nth-child(1n) {
-    border-top: solid 1px;
     border-bottom: solid 1px;
     border-color: $gray;
   }
