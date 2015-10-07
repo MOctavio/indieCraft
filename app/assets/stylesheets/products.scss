@@ -1,34 +1,33 @@
 @import "variables";
-
 .products {
+  .pure-gutter > * {
+    margin: 15px;
+  }
   h1 {
     background-color: darken(rgb(233, 233, 233), 60%);
     margin: 0;
     padding: 10px;
     color: $light-gray;
   }
-
   .img-box {
-    padding: 15px;
+    height: 235px;
   }
-
   .list_description {
     color: darken($gray, 60%);
-    padding: 30px;
-
-    p.title {
-      font-weight: bold;
-      font-size: larger;
+    height: 265px;
+    > p {
+      margin-left: 40px;
+      &.title {
+        font-weight: bold;
+        font-size: larger;
+      }
     }
   }
-
   .list-options {
     padding: 15px;
   }
-
-  [class*='pure-u']:nth-child(1n) {
+  [class*='pure-u'] {
     border-bottom: solid 1px;
     border-color: $gray;
   }
-
 }

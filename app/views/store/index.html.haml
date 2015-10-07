@@ -1,13 +1,12 @@
 .pure-g
-  %h1.pure-u-1 Your Pragmatic Catalog
+  %h1.pure-u-1 Catalog
   - if notice
     %p#notice= notice
   .products
     - @products.each do |product|
-      .pure-u-1-8
-        .img-box
-          %p= image_tag(product.image_url, class: 'pure-img')
-      .pure-u-7-8
-        .list_description
-          %p.title= product.title
-          %p= truncate(strip_tags(product.description), length: 180)
+      .pure-u-1-5.pure-gutter
+        = image_tag(product.image_url, class: 'pure-img img-box')
+      .pure-u-4-5.list_description.pure-gutter
+        %p.title= product.title
+        %p= truncate(strip_tags(product.description), length: 180)
+        %p= product.price
