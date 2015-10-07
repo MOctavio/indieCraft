@@ -1,19 +1,18 @@
-%h1 Listing products
-%table
+.pure-g
+  %h1.pure-u-1 Listing products
+  .pure-u-1
+    %p= link_to 'New product', new_product_path, :class => "button-small pure-button"
   - @products.each do |product|
-    %tr{:class => cycle('list_line_odd', 'list_line_even')}
-      %td
-        = image_tag(product.image_url, class: 'list_image')
-      %td.list_description
-        %dl
-          %dt= product.title
-          %dd= truncate(strip_tags(product.description), length: 80)
-      %td.list_actions
-        = link_to 'Show', product
-        %br/
-        = link_to 'Edit', edit_product_path(product)
-        %br/
-        = link_to 'Destroy', product, method: :delete, |
-          data: { confirm: 'Are you sure?' }           |
-%br/
-= link_to 'New product', new_product_path
+    .pure-u-3-24
+      .img-box
+        %p= image_tag(product.image_url, class: 'pure-img')
+    .pure-u-18-24
+      .list_description
+        %p.title= product.title
+        %p= truncate(strip_tags(product.description), length: 180)
+    .pure-u-3-24
+      .list-options
+        %p= link_to 'Show', product, :class => "button-small pure-button pure-button-primary"
+        %p= link_to 'Edit', edit_product_path(product), :class => "button-small pure-button"
+        %p= link_to 'Destroy', product, :class => "button-small pure-button", method: :delete,
+          data: { confirm: 'Are you sure?' }

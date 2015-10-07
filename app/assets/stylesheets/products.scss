@@ -1,63 +1,37 @@
-$green: rgb(138, 193, 7);
 $gray: rgb(233, 233, 233);
-$light-gray: lighten($gray, 20%);
+$light-gray: lighten($gray, 40%);
 
 .products {
+
   h1 {
-    background-color: darken($gray, 60%);
-    line-height: 42px;
-    margin: 0px;
+    background-color: darken(rgb(233, 233, 233), 60%);
+    margin: 0;
     padding: 10px;
     color: $light-gray;
   }
 
-  table {
-    border-collapse: collapse;
-    margin: 8px;
-  }
-
-  table tr td {
-    padding: 5px;
-    vertical-align: top;
-  }
-
-  .list_image {
-    width: 60px;
-    height: 70px;
-    border-radius: 25px;
-    background: $green;
-    padding: 5px;
+  .img-box {
+    padding: 15px;
   }
 
   .list_description {
-    width: 60%;
+    color: darken($gray, 60%);
+    padding: 30px;
 
-    dl {
-      margin: 0;
-    }
-
-    dt {
-      color: darken($gray, 60%);
+    p.title {
       font-weight: bold;
       font-size: larger;
     }
-
-    dd {
-      margin: 0;
-    }
   }
 
-  .list_actions {
-    font-size: x-small;
-    text-align: right;
-    padding-left: 1em;
+  .list-options {
+    padding: 15px;
   }
 
-  .list_line_even {
-    background: $light-gray;
+  [class*='pure-u']:nth-child(1n) {
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    border-color: $gray;
   }
 
-  .list_line_odd {
-    background: $gray;
-  }
 }

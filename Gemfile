@@ -13,6 +13,8 @@ gem "bourbon"
 gem "haml-rails"
 # Font-Awesome Sass gem (https://github.com/FortAwesome/font-awesome-sass)
 gem 'font-awesome-rails'
+# Pure CSS for Rails Asset Pipeline
+gem 'pure-css-rails', '~> 0.6.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
