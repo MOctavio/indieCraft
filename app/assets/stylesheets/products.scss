@@ -1,14 +1,7 @@
 @import "variables";
-
 .products {
   .pure-gutter > * {
     margin: 15px;
-  }
-  h1 {
-    background-color: darken($gray, 60%);
-    margin: 0;
-    padding: 10px;
-    color: $light-gray;
   }
   .img-box {
     height: 235px;
