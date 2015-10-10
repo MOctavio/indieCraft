@@ -2,7 +2,7 @@
 
 .store {
     h1 {
-      background-color: darken(rgb(233, 233, 233), 60%);
+      background-color: darken($gray, 60%);
       margin: 0;
       padding: 10px;
       color: $light-gray;
