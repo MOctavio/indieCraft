@@ -9,4 +9,4 @@
       .pure-u-4-5.list_description.pure-gutter
         %p.title= product.title
         %p= truncate(strip_tags(product.description), length: 180)
-        %p= product.price
+        %p.price= number_to_currency(product.price)
