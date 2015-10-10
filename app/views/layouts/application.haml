@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title Depot
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body{:class => controller.controller_name}
+    %nav#main-menu.pure-menu.pure-menu-open.pure-menu-horizontal
+      %a.pure-menu-heading Depot
+      %ul.pure-menu-list
+        %li.pure-menu-item.pure-menu-selected
+          = link_to 'Store', store_path, :class => "pure-menu-link"
+        %li.pure-menu-item= link_to 'Products', products_path, :class => "pure-menu-link"
+    = yield
