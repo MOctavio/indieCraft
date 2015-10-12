@@ -21,7 +21,11 @@
       &.price {
         font-weight: bold;
         font-size: larger;
+        display: inline;
       }
+    }
+    > form, input {
+      display: inline;
     }
   }
   .list-options {

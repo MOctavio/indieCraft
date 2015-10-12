@@ -13,3 +13,4 @@
               %p.title= product.title
               %p= truncate(strip_tags(product.description), length: 180)
               %p.price= number_to_currency(product.price)
+              = button_to 'Add to cart', line_items_path(product_id: product), :class => "button-small pure-button pure-button-primary"

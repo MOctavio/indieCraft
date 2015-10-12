@@ -1,0 +1,13 @@
+.pure-g
+  .page-title.pure-u-1 Shopping Cart
+  - if notice
+    %p#notice= notice
+  .products
+    - @cart.line_items.each do |item|
+      .product
+        .pure-u-2-5.pure-gutter
+          = image_tag(item.product.image_url, class: 'pure-img img-box')
+        .pure-u-3-5.list_description.pure-gutter
+          %p.title= item.product.title
+          %p= truncate(strip_tags(item.product.description), length: 180)
+          %p.price= number_to_currency(item.product.price)

@@ -13,7 +13,7 @@
  * require_tree .
  *= require_self
  *= require variables
- *= require scaffolds
+ *= require style
  *= require products
  *= require store
  *= require pure
