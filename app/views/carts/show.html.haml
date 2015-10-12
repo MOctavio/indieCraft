@@ -1,8 +1,5 @@
 .pure-g
   .page-title.pure-u-1 Shopping Cart
-  .pure-u-1
-    %p= button_to 'Empty cart', @cart, :class => "button-small pure-button", method: :delete,
-      data: { confirm: 'Are you sure?' }
   - if notice
     %p#notice= notice
   .products
@@ -16,4 +13,7 @@
           %p= truncate(strip_tags(item.product.description), length: 100)
           %p Quantity: #{item.quantity}
           %p Price: #{number_to_currency(item.product.price)}
-          %p.price Total price: #{number_to_currency(@cart.total_price)}
+          %p.price
+            Total price: #{number_to_currency(@cart.total_price)}
+            = button_to 'Remove item', item, :class => "button-small pure-button", method: :delete,
+              data: { confirm: 'Are you sure?' }
