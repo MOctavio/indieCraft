@@ -15,6 +15,7 @@
  *= require variables
  *= require style
  *= require products
+ *= require carts
  *= require store
  *= require pure
  */

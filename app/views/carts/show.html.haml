@@ -14,6 +14,9 @@
           %p Quantity: #{item.quantity}
           %p Price: #{number_to_currency(item.product.price)}
           %p.price
-            Total price: #{number_to_currency(@cart.total_price)}
+            Subtotal: #{number_to_currency(item.total_price)}
             = button_to 'Remove item', item, :class => "button-small pure-button", method: :delete,
               data: { confirm: 'Are you sure?' }
+    .pure-u-1.total-price
+      %p #{pluralize @cart.items_quantity, 'item'}  in cart
+      %p Total price: #{number_to_currency(@cart.total_price)}
