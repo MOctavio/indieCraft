@@ -1,7 +1,9 @@
 .pure-g
-  .page-title.pure-u-1 Products catalog
+  .page-title.pure-u-1
+    Products catalog viewed
+    = pluralize session[:counter], 'time'
   - if notice
-    %p#notice= notice
+    %p.pure-u-1#notice= notice
   .products
     -cache ['store', Product.latest] do
       - @products.each do |product|
