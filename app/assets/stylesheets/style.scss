@@ -1,11 +1,14 @@
 @import "variables";
 .page-title {
-  background-color: $gray;
+  background-color: $dark-blue;
   padding: 0.5em 1em;
   color: darken($light-gray, 30%);
 }
 .cart-link {
   float: right;
+}
+.pure-button-primary {
+  background-color: rgba(242, 182, 0, 1);
 }
 #notice {
   color: green;

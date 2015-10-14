@@ -12,12 +12,11 @@
  *
  * require_tree .
  *= require_self
+ *= require pure
  *= require variables
  *= require style
  *= require products
  *= require carts
  *= require store
- *= require pure
  */
- @import "font-awesome-sprockets";
  @import "font-awesome";
