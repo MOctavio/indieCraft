@@ -19,3 +19,5 @@
  *= require store
  *= require pure
  */
+ @import "font-awesome-sprockets";
+ @import "font-awesome";

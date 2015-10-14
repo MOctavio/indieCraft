@@ -4,6 +4,9 @@
   padding: 0.5em 1em;
   color: darken($light-gray, 30%);
 }
+.cart-link {
+  float: right;
+}
 #notice {
   color: green;
   width: 100%;
