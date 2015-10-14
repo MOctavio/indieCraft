@@ -1,0 +1,5 @@
+.products
+  = render(@cart.line_items)
+  .pure-u-1.total-price
+    %p #{pluralize @cart.items_quantity, 'item'}  in cart
+    %p Total price: #{number_to_currency(@cart.total_price)}

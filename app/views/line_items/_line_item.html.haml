@@ -1,0 +1,13 @@
+.product
+  .pure-u-2-5.pure-gutter
+    = image_tag(line_item.product.image_url, class: 'pure-img img-box')
+  .pure-u-3-5.list_description.pure-gutter
+    %p.title
+      = line_item.product.title
+    %p= truncate(strip_tags(line_item.product.description), length: 100)
+    %p Quantity: #{line_item.quantity}
+    %p Price: #{number_to_currency(line_item.product.price)}
+    %p.price
+      Subtotal: #{number_to_currency(line_item.total_price)}
+      = button_to 'Remove item', line_item, :class => "button-small pure-button", method: :delete,
+        data: { confirm: 'Are you sure?' }
