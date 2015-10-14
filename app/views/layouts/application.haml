@@ -13,4 +13,6 @@
           = link_to 'Store', store_path, :class => "pure-menu-link"
         %li.pure-menu-item
           = link_to 'Products', products_path, :class => "pure-menu-link"
+        %li.pure-menu-item
+          = link_to 'Cart', cart_path(@cart), :class => "pure-menu-link"
     = yield
