@@ -6,7 +6,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body{:class => controller.controller_name}
-    %nav#main-menu.pure-menu.pure-menu-open.pure-menu-horizontal
+    %nav#main-menu.pure-menu.pure-menu-open.pure-menu-horizontal.fixed-navbar
       %a.pure-menu-heading Depot
       %ul.pure-menu-list
         %li.pure-menu-item
@@ -16,6 +16,8 @@
       %ul.pure-menu-list.cart-link
         %li.pure-menu-item
           = link_to cart_path(@cart), :class => "pure-menu-link pure-menu-selected" do
-            #{fa_icon "shopping-cart"} Cart (#{pluralize @cart.items_quantity, 'item'})
+            #{fa_icon "shopping-cart"} Cart (
+            %span#cart= pluralize @cart.items_quantity, 'item'
+            )
         -# = link_to 'Cart', cart_path(@cart), :class => "pure-menu-link"
     = yield
