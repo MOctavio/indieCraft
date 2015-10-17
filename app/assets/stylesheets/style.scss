@@ -5,8 +5,8 @@ nav.fixed-navbar {
   top: 0;
   width: 100%;
   z-index: 100;
-    border-bottom: solid 1px;
-    border-color: $gray;
+  border-bottom: solid 1px;
+  border-color: $gray;
 }
 .page-title {
   margin-top: 34px;
@@ -17,11 +17,15 @@ nav.fixed-navbar {
 .cart-link {
   float: right;
 }
-.cart-container {
-}
-.cart-container-active {
-  background-color: $primary-yellow;
-  color: $light-gray;
+.screen-message {
+  color: darken($light-gray, 10%);
+  font-size: 2.5em;
+  p {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 .pure-button-primary {
   background-color: $primary-yellow;

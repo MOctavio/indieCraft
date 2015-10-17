@@ -1,5 +1,12 @@
 .products
   = render(@cart.line_items)
-  .pure-u-1.total-price
-    %p #{pluralize @cart.items_quantity, 'item'}  in cart
-    %p Total price: #{number_to_currency(@cart.total_price)}
+
+  .pure-u-1
+    - unless @cart.line_items.empty?
+      .total-price
+        %p #{pluralize @cart.items_quantity, 'item'}  in cart
+        %p Total price: #{number_to_currency(@cart.total_price)}
+    - else
+    .screen-message
+      %p
+        #{fa_icon "meh-o"} Nothing added to your cart yet.
