@@ -7,6 +7,6 @@
         %p #{pluralize @cart.items_quantity, 'item'}  in cart
         %p Total price: #{number_to_currency(@cart.total_price)}
     - else
-    .screen-message
-      %p
-        #{fa_icon "meh-o"} Nothing added to your cart.
+      .screen-message
+        %p
+          #{fa_icon "meh-o"} Nothing added to your cart.
