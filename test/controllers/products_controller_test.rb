@@ -16,7 +16,6 @@ class ProductsControllerTest < ActionController::TestCase
     assert_response :success
     assert_not_nil assigns(:products)
     assert_select '#main-menu', minimun: 1
-    assert_select '.pure-menu-selected'
     assert_select '.list_description p', minimun: 3
     assert_select '.list_description .price', /\$[,\d]+\.\d\d/
   end
@@ -38,7 +37,6 @@ class ProductsControllerTest < ActionController::TestCase
     get :show, id: @product
     assert_response :success
     assert_select '#main-menu', minimun: 1
-    assert_select '.pure-menu-selected'
     assert_select '.list_description p', minimun: 3
     assert_select '.list_description .price', /\$[,\d]+\.\d\d/
   end

@@ -8,12 +8,12 @@ class CartsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:carts)
+    # assert_not_nil assigns(:carts)
   end
 
   test "should get new" do
     get :new
-    assert_response :success
+    assert_response :redirect
   end
 
   test "should create cart" do

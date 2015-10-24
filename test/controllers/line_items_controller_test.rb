@@ -12,16 +12,23 @@ class LineItemsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, id: @cart
+    assert_response :success
+  end
+
+  test "should create remote line_item" do
+    assert_difference('LineItem.count') do
+      post :create, product_id: products(:one).id, format: :js
+    end
+
     assert_response :success
   end
 
   test "should create line_item" do
     assert_difference('LineItem.count') do
-      post :create, product_id: products(:one).id
+      post :create, product_id: products(:one).id, format: :html
     end
-
-    assert_redirected_to cart_path(assigns(:line_item).cart)
+    assert_redirected_to cart_path(assigns(:line_item))
   end
 
   test "should show line_item" do
@@ -44,6 +51,6 @@ class LineItemsControllerTest < ActionController::TestCase
       delete :destroy, id: @line_item
     end
 
-    assert_redirected_to line_items_path
+    assert_redirected_to cart_path(assigns(:cart))
   end
 end
