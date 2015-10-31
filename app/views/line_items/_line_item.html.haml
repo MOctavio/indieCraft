@@ -5,7 +5,12 @@
     %p.title
       = line_item.product.title
     %p= truncate(strip_tags(line_item.product.description), length: 100)
-    %p Quantity: #{line_item.quantity}
+    %p.line_item_quantity Quantity: #{select_tag "line_item[quantity]",               |
+      options_for_select(quantity_options, selected = line_item.quantity),            |
+      data: {                                                                         |
+      remote: true,                                                                   |
+      method: "patch",                                                                |
+      url: url_for(:controller=>'line_items', :action=>'update', :id => line_item) }} |
     %p Price: #{number_to_currency(line_item.product.price)}
     %p.price
       Subtotal: #{number_to_currency(line_item.total_price)}
