@@ -20,7 +20,11 @@ class LineItemsControllerTest < ActionController::TestCase
     assert_difference('LineItem.count') do
       post :create, product_id: products(:one).id, format: :js
     end
+    assert_response :success
+  end
 
+  test "should update remote line_item" do
+    patch :update, id: @line_item, line_item: { quantity: @line_item.quantity }, format: :js
     assert_response :success
   end
 
