@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: John Lock
+  address: The Island
+  email: jlock@dharma.com
+  pay_type: Check
+
+order_two:
+  name: MyString
+  address: MyText
+  email: mymtring@example.com
+  pay_type: Credit card
