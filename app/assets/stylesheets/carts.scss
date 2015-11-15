@@ -2,11 +2,16 @@
 .carts {
   .total-price {
     padding: 0.5em 1em;
+    float: right;
+    color: $dark-gray;
     > p {
       font-weight: bold;
       font-size: large;
       text-align: right;
       display: block;
+    }
+    > form {
+      text-align: right;
     }
     border-bottom: solid 1px;
     border-color: $gray;

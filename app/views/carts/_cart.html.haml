@@ -6,6 +6,7 @@
       .total-price
         %p #{pluralize @cart.items_quantity, 'item'}  in cart
         %p Total price: #{number_to_currency(@cart.total_price)}
+        = button_to "Checkout", new_order_path, :class => "button-small pure-button pure-button-primary", method: :get
     - else
       .screen-message
         %p

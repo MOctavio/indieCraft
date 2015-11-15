@@ -10,9 +10,27 @@ nav.fixed-navbar {
 }
 .page-title {
   margin-top: 34px;
+  margin-bottom: 34px;
   background-color: $dark-blue;
   padding: 0.5em 1em;
   color: darken($light-gray, 30%);
+}
+#error_explanation {
+  padding-left: 1em;
+  color: $dark-gray;
+  margin-bottom: 45px;
+  h2 {
+    font-size: 1.2em;
+  }
+}
+#notice {
+    padding-left: 0.5em;
+    color: $dark-gray;
+    font-size: 1em;
+    background-color: darken($light-gray, 3%);
+    line-height: 2em;
+    margin-top: -34px;
+    text-align: right;
 }
 .cart-link {
   float: right;
@@ -29,4 +47,8 @@ nav.fixed-navbar {
 }
 .pure-button-primary {
   background-color: $primary-yellow;
+}
+.pure-button-secondary {
+  background-color: $blue;
+  color: $light-gray;
 }
