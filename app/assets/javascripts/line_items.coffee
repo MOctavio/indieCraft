@@ -7,6 +7,7 @@ $(document).on 'ready page:load', ->
   return
 
 this.updateQuantity = ->
+  return if $(".store.index").length > 0
   line_item_quantity_e = document.getElementById('line_item_quantity')
   url = line_item_quantity_e.dataset.url
   if line_item_quantity_e.value.localeCompare('+10') == 0
