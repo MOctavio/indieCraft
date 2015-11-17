@@ -1,4 +1,4 @@
-ready = ->
+$(document).on 'ready page:load', ->
   return if $(".store.index").length > 0
 
   line_item_quantity_e = document.getElementById('line_item_quantity')
@@ -18,7 +18,7 @@ ready = ->
     line_item_quantity_e = document.getElementById('line_item_quantity')
 
     line_item_e.removeChild(line_item_quantity_e);
-    input  = document.createElement('input')
+    input = document.createElement('input')
     input.type = 'text'
     input.className = 'css-class-name'
     input.id = 'line_item_quantity'
@@ -27,7 +27,7 @@ ready = ->
     input.dataset.url = url
     line_item_e.appendChild(input);
 
-    button  = document.createElement('button')
+    button = document.createElement('button')
     button_text = document.createTextNode('Update quantity')
     button.appendChild(button_text)
     button.addEventListener 'click', ->
@@ -41,15 +41,3 @@ ready = ->
     data = new FormData();
     data.append( 'line_item[quantity]', line_item_quantity );
     return data
-
-  remoteRequest = (url,data) ->
-    $.ajax
-      type: 'patch'
-      url: url
-      data: data
-      processData: false
-      contentType: false
-    return
-
-$(document).ready(ready)
-$(document).on('page:load', ready)

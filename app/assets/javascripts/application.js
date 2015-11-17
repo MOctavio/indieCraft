@@ -14,4 +14,5 @@
 //= require jquery-ui/effect-blind
 //= require jquery_ujs
 //= require turbolinks
+//= require httpService
 //= require_tree .
