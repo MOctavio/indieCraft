@@ -8,17 +8,17 @@
   %body{class: "#{controller.controller_name} #{action_name}"}
     %nav#main-menu.pure-menu.pure-menu-open.pure-menu-horizontal.fixed-navbar
       %a.pure-menu-heading
-        %img{:alt => "Depot 506", class: "brand", :src => "/assets/depot506.png"}/
+        =image_tag('depot506.png', class: "brand")
         .brand Depot 506
       %ul.pure-menu-list
         %li.pure-menu-item
-          = link_to 'Store', store_path, :class => "pure-menu-link pure-menu-selected"
+          = link_to 'Store', store_path, class:  "pure-menu-link pure-menu-selected"
         %li.pure-menu-item
-          = link_to 'Products', products_path, :class => "pure-menu-link"
+          = link_to 'Products', products_path, class: "pure-menu-link"
       %ul.pure-menu-list.cart-link
         %li.pure-menu-item
           -if @cart
-            = link_to cart_path(@cart), :id => 'cart-container', :class => "pure-menu-link" do
+            = link_to cart_path(@cart), id: 'cart-container', class: "pure-menu-link" do
               #{fa_icon "shopping-cart"}
               %span#cart= pluralize @cart.items_quantity, 'item'
               in Cart
