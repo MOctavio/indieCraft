@@ -1,19 +1,35 @@
 @import "variables";
+$nav-bar-span: 40px;
+
+body {
+  height: 100%;
+  overflow: hidden;
+}
 nav.fixed-navbar {
   background-color: $light-gray;
   position: fixed;
   top: 0;
   width: 100%;
+  height: $nav-bar-span;
   z-index: 100;
   border-bottom: solid 1px;
-  border-color: $gray;
+  border-color: $color-base-light;
+  .brand {
+    line-height: 24px; //img size
+    vertical-align: middle;
+    padding-right: 24px; //img size
+  }
+  img.brand {
+    float: left;
+    padding-right: 10px;
+  }
 }
 .page-title {
-  margin-top: 34px;
-  margin-bottom: 34px;
-  background-color: $dark-blue;
+  margin-top: $nav-bar-span;
+  margin-bottom: $nav-bar-span;
+  background-color: $color-base;
   padding: 0.5em 1em;
-  color: darken($light-gray, 30%);
+  color: $gray;
 }
 #error_explanation {
   padding-left: 1em;
@@ -24,19 +40,20 @@ nav.fixed-navbar {
   }
 }
 #notice {
-    padding-left: 0.5em;
-    color: $dark-gray;
-    font-size: 1em;
-    background-color: darken($light-gray, 3%);
-    line-height: 2em;
-    margin-top: -34px;
-    text-align: right;
+  padding-left: 0.5em;
+  color: $dark-gray;
+  font-size: 1em;
+  background-color: darken($light-gray, 3%);
+  line-height: 2em;
+  margin-top: -$nav-bar-span;
+  text-align: right;
 }
 .cart-link {
   float: right;
+  padding-top: 3px;
 }
 .screen-message {
-  color: darken($light-gray, 10%);
+  color: $gray;
   font-size: 2.5em;
   p {
     position: absolute;
@@ -46,9 +63,44 @@ nav.fixed-navbar {
   }
 }
 .pure-button-primary {
-  background-color: $primary-yellow;
+  background-color: $color-base;
 }
 .pure-button-secondary {
-  background-color: $blue;
+  background-color: $color-base-2;
   color: $light-gray;
+}
+.content-wrapper {
+  height: 91vh;
+  overflow-x: hidden;
+
+}
+/* --------------------------
+ * Footer Module Styles
+ * --------------------------
+*/
+.footer {
+  height: 9vh;
+  .legal {
+    font-size: 87.5%;
+    border-top: 1px solid #eee;
+    padding: 0.5em 1em;
+    // background: $gray;
+    line-height: 1.6;
+    color: $dark-gray;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  .legal-license {
+    margin-top: 0;
+    float: left;
+    text-align: left;
+  }
+  .legal-info {
+    padding: 0;
+    margin-bottom: 0;
+    float: right;
+    text-align: right;
+  }
 }

@@ -1,7 +1,9 @@
 .pure-g
   .page-title.pure-u-1
-    Products catalog viewed
-    = pluralize session[:counter], 'time'
+    - if session[:counter] > 1
+      We have #{session[:counter]} deals for a limited-time sale.
+    - else
+      New deals and more every day. Keep visiting us to find more about.
   - if notice
     %p.pure-u-1#notice= notice
   .products
@@ -16,5 +18,5 @@
               %p= truncate(strip_tags(product.description), length: 180)
               %p.price= number_to_currency(product.price)
               = button_to line_items_path(product_id: product),
-                :class => "button-small pure-button pure-button-primary", remote: true do
+                :class => "button-small pure-button pure-button-secondary", remote: true do
                 #{fa_icon "cart-plus"} Add to cart
