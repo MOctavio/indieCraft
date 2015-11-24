@@ -1,7 +1,9 @@
 $(document).on 'ready page:load', ->
   return if $(".store.index").length > 0
-
+  
   line_item_quantity_e = document.getElementById('line_item_quantity')
+  return if !line_item_quantity_e
+
   if line_item_quantity_e.dataset.quantity > 9
     updateDOMElements(line_item_quantity_e.dataset.url, line_item_quantity_e.dataset.quantity)
 
