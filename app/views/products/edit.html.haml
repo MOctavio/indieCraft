@@ -1,7 +1,8 @@
-%h1 Editing product
+.pure-g
+  .page-title.pure-u-1 Editing product
+  .pure-u-1
+    = render 'form'
 
-= render 'form'
-
-= link_to 'Show', @product
-\|
-= link_to 'Back', products_path
+    = link_to 'Show', @product
+    \|
+    = link_to 'Back', products_path
