@@ -1,15 +1,15 @@
 !!!
 %html
   %head
-    %title Depot 506
+    %title Indie Craft
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body{class: "#{controller.controller_name} #{action_name}"}
     %nav#main-menu.pure-menu.pure-menu-open.pure-menu-horizontal.fixed-navbar
       %a.pure-menu-heading
-        =image_tag('depot506.png', class: "brand")
-        .brand Depot 506
+        =image_tag('indieCraftStorex24.png', class: "brand")
+        .brand Indie Craft
       %ul.pure-menu-list
         %li.pure-menu-item
           = link_to 'Store', store_path, class:  "pure-menu-link pure-menu-selected"
@@ -22,16 +22,24 @@
               #{fa_icon "shopping-cart"}
               %span#cart= pluralize @cart.items_quantity, 'item'
               in Cart
-    .content-wrapper
+    .pure-g.content-wrapper
+      .brand-img
+        =image_tag('indieCraftStore.jpg')
+        %h1
+          =image_tag('indieCraftStorex64.png')
+          Indie Craft
+        %h2
+          Store
+      #page-title.page-title.pure-u-1
       = yield
 
     .footer
       .legal.pure-g
         .pure-u-1.u-sm-1-2
           .legal-license
-            Deppot 506
+            Indie Craft Store
             %br/
-            %a{:href => "https://github.com/MOctavio/depot"} Mario Octavio Jimenez - GitHub Project
+            %a{:href => "https://github.com/MOctavio/indieCraft"} Mario Octavio Jimenez - GitHub Project
           .legal-info
             Based on
             %a{:href => "https://pragprog.com/book/rails4/agile-web-development-with-rails-4", :title => "Agile Web Development with Rails 4"} Agile Web Development with Rails 4

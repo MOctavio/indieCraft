@@ -1,3 +1,5 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).on 'ready page:load', ->
+  return if $(".products").length < 1
+
+  page_title = document.getElementById('page-title')
+  page_title.innerText = "Products module"

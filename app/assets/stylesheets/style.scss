@@ -1,9 +1,9 @@
 @import "variables";
 $nav-bar-span: 40px;
-
 body {
-  height: 100%;
-  overflow: hidden;
+
+  // height: 100%;
+  // overflow: hidden;
 }
 nav.fixed-navbar {
   background-color: $light-gray;
@@ -15,6 +15,7 @@ nav.fixed-navbar {
   border-bottom: solid 1px;
   border-color: $color-base-light;
   .brand {
+    text-transform: none;
     line-height: 24px; //img size
     vertical-align: middle;
     padding-right: 24px; //img size
@@ -24,8 +25,36 @@ nav.fixed-navbar {
     padding-right: 10px;
   }
 }
+.brand-img {
+  position: relative;
+  img {
+    margin-top: 40px;
+    height: 46vh;
+    width: 100vw;
+  }
+  h1,
+  h2 {
+    position: absolute;
+    letter-spacing: normal;
+    text-align: right;
+    width: 95vw;
+    color: $gray;
+  }
+  h1 {
+    top: 10vh;
+    font-size: -webkit-xxx-large;
+    img {
+      width: 64px;
+      height: 64px;
+    }
+  }
+  h2 {
+    top: calc(12vh + 115px);
+    font-size: large;
+  }
+}
 .page-title {
-  margin-top: $nav-bar-span;
+  margin-top: -3px; //ugly fix
   margin-bottom: $nav-bar-span;
   background-color: $color-base;
   padding: 0.5em 1em;
@@ -70,9 +99,10 @@ nav.fixed-navbar {
   color: $light-gray;
 }
 .content-wrapper {
-  height: 91vh;
-  overflow-x: hidden;
 
+  // height: 91vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 /* --------------------------
  * Footer Module Styles
@@ -84,6 +114,7 @@ nav.fixed-navbar {
     font-size: 87.5%;
     border-top: 1px solid #eee;
     padding: 0.5em 1em;
+
     // background: $gray;
     line-height: 1.6;
     color: $dark-gray;
