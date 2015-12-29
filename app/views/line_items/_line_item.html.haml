@@ -16,4 +16,3 @@
       Subtotal: #{number_to_currency(line_item.total_price)}
       = button_to 'Remove item', line_item, :class => "button-small pure-button pure-button-secondary", method: :delete,
         data: { confirm: 'Are you sure?' }
-      %div

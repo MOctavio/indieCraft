@@ -1,12 +1,6 @@
 $(document).on 'ready page:load', ->
   return if $(".carts.show").length < 0
 
-  # line_item_quantity_e = document.getElementById('line_item_quantity')
-  # return if !line_item_quantity_e
-  #
-  # if line_item_quantity_e.dataset.quantity > 9
-  #   updateDOMElements(line_item_quantity_e.dataset.url, line_item_quantity_e.dataset.quantity)
-
   this.updateQuantity = (line_item_quantity_e) ->
     url = line_item_quantity_e.dataset.url
     if line_item_quantity_e.value.localeCompare('+10') == 0
@@ -20,13 +14,13 @@ $(document).on 'ready page:load', ->
     line_item_e.removeChild(line_item_quantity_e);
     input = document.createElement('input')
     input.type = 'text'
-    input.className = 'css-class-name'
     input.value = value
     input.style.width = '40px'
     input.dataset.url = url
     line_item_e.appendChild(input);
     button = document.createElement('button')
     button_text = document.createTextNode('Update quantity')
+    button.className = 'button-small pure-button'
     button.appendChild(button_text)
     button.addEventListener 'click', ->
       remoteRequest(url,local_data(input))

@@ -61,11 +61,16 @@ a {
   }
 }
 #error_explanation {
-  padding-left: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: $color-base-2-light;
   color: $dark-gray;
   margin-bottom: 45px;
   h2 {
-    font-size: 1.2em;
+    font-size: 1em;
+  }
+  ul li {
+    display: block;
   }
 }
 #notice {
