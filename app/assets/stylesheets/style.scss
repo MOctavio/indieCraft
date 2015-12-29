@@ -1,12 +1,94 @@
 @import "variables";
 $nav-bar-span: 40px;
-body {
-
-  // height: 100%;
-  // overflow: hidden;
+$footer-height: 90px;
+/* --------------------------
+ * PureCss Custom
+ * --------------------------
+*/
+.pure-button-primary,
+a.pure-button-primary {
+  background-color: $color-base;
+  color: $lighter-gray;
 }
+.pure-button-secondary,
+a.pure-button-secondary {
+  background-color: $color-base-2;
+  color: white;
+}
+
+/* --------------------------
+ * General Settings
+ * --------------------------
+*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+/*Normalize html and body elements,this style is just good to have*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body > section {
+  margin-bottom: $footer-height;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+form {
+  margin-bottom: $nav-bar-span;
+}
+.center {
+  text-align: center;
+}
+.content-wrapper {
+  margin: 0 auto;
+  max-width: 980px;
+  margin-top: 60px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+  &:hover {
+    color: inherit;
+  }
+}
+#error_explanation {
+  padding-left: 1em;
+  color: $dark-gray;
+  margin-bottom: 45px;
+  h2 {
+    font-size: 1.2em;
+  }
+}
+#notice {
+  color: $dark-gray;
+  font-size: 1em;
+}
+.screen-message {
+  color: $light-gray;
+  font-size: 2.5em;
+  p {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* --------------------------
+ * Header Modules
+ * --------------------------
+*/
 nav.fixed-navbar {
-  background-color: $light-gray;
+  background-color: white;
   position: fixed;
   top: 0;
   width: 100%;
@@ -25,113 +107,127 @@ nav.fixed-navbar {
     padding-right: 10px;
   }
 }
-.brand-img {
-  position: relative;
-  img {
-    margin-top: 40px;
-    height: 46vh;
-    width: 100vw;
-  }
-  h1,
-  h2 {
-    position: absolute;
-    letter-spacing: normal;
-    text-align: right;
-    width: 95vw;
-    color: $gray;
-  }
-  h1 {
-    top: 10vh;
-    font-size: -webkit-xxx-large;
-    img {
-      width: 64px;
-      height: 64px;
-    }
-  }
-  h2 {
-    top: calc(12vh + 115px);
-    font-size: large;
-  }
-}
-.page-title {
-  margin-top: -3px; //ugly fix
-  margin-bottom: $nav-bar-span;
-  background-color: $color-base;
-  padding: 0.5em 1em;
-  color: $gray;
-}
-#error_explanation {
-  padding-left: 1em;
-  color: $dark-gray;
-  margin-bottom: 45px;
-  h2 {
-    font-size: 1.2em;
-  }
-}
-#notice {
-  padding-left: 0.5em;
-  color: $dark-gray;
-  font-size: 1em;
-  background-color: darken($light-gray, 3%);
-  line-height: 2em;
-  margin-top: -$nav-bar-span;
-  text-align: right;
-}
 .cart-link {
   float: right;
   padding-top: 3px;
 }
-.screen-message {
+nav.sub-menu {
+  margin-top: $nav-bar-span;
+  background-color: $color-base-4;
+  border-bottom: solid 1px;
+  border-color: $color-base-light;
   color: $gray;
-  font-size: 2.5em;
-  p {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 }
-.pure-button-primary {
-  background-color: $color-base;
-}
-.pure-button-secondary {
-  background-color: $color-base-2;
-  color: $light-gray;
-}
-.content-wrapper {
 
-  // height: 91vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
 /* --------------------------
- * Footer Module Styles
+ * Hero Module
  * --------------------------
 */
-.footer {
-  height: 9vh;
-  .legal {
-    font-size: 87.5%;
-    border-top: 1px solid #eee;
-    padding: 0.5em 1em;
-
-    // background: $gray;
-    line-height: 1.6;
-    color: $dark-gray;
-    a {
-      text-decoration: none;
-      color: inherit;
+.hero {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 335px;
+  margin-top: $nav-bar-span;
+  background: url(indieCraftStore.jpg) $color-base;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left bottom;
+  .brand {
+    position: absolute;
+    top: 79px;
+    right: 11%;
+    width: 34%;
+    height: 79px;
+    .hero-title {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 75%;
+      font-size: 54px;
+      font-weight: 600;
+      line-height: 1.38;
+      text-align: right;
+      color: $color-base-2;
+      img {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 320px;
+        width: 64px;
+        height: 54px;
+        overflow: hidden;
+      }
+    }
+    .hero-subtitle {
+      position: absolute;
+      top: 90px;
+      right: 0;
+      width: 75%;
+      font-style: italic;
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 1.38;
+      text-align: right;
+      letter-spacing: 2px;
+      color: $lighter-gray;
     }
   }
-  .legal-license {
-    margin-top: 0;
-    float: left;
-    text-align: left;
+}
+
+/* --------------------------
+ * Panel Modules
+ * --------------------------
+*/
+.description-panel {
+  height: $footer-height * 3;
+  background-color: $color-base-2;
+  article {
+    margin-left: 10%;
+    width: 80%;
+    font-size: 1.125em;
+    font-weight: 400;
+    line-height: 1.38;
+    text-align: center;
+    color: $lighter-gray;
+    p {
+      padding-top: 64px;
+      margin-bottom: 1em;
+    }
   }
-  .legal-info {
-    padding: 0;
-    margin-bottom: 0;
-    float: right;
-    text-align: right;
+}
+.left-panel {
+  width: 40%;
+  margin-left: 10%;
+  position: relative;
+  float: left;
+}
+.right-panel {
+  width: 40%;
+  position: relative;
+  float: left;
+  text-align: right;
+}
+
+/* --------------------------
+ * Footer Modules
+ * --------------------------
+*/
+.page-footer {
+  position: relative;
+  width: 100%;
+  height: $footer-height * 2;
+  background-color: $lighter-gray;
+}
+footer {
+  width: 100%;
+  height: $footer-height;
+  background-color: $color-base;
+  padding-top: 12px;
+  p {
+    font-size: 0.875em;
+    font-weight: 300;
+    line-height: 1.2;
+    color: $lighter-gray;
   }
 }

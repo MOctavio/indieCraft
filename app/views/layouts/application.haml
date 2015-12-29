@@ -6,7 +6,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body{class: "#{controller.controller_name} #{action_name}"}
-    %nav#main-menu.pure-menu.pure-menu-open.pure-menu-horizontal.fixed-navbar
+    %nav.pure-menu.pure-menu-open.pure-menu-horizontal.fixed-navbar
       %a.pure-menu-heading
         =image_tag('indieCraftStorex24.png', class: "brand")
         .brand Indie Craft
@@ -22,31 +22,20 @@
               #{fa_icon "shopping-cart"}
               %span#cart= pluralize @cart.items_quantity, 'item'
               in Cart
-    .pure-g.content-wrapper
-      .brand-img
-        =image_tag('indieCraftStore.jpg')
-        %h1
-          =image_tag('indieCraftStorex64.png')
-          Indie Craft
-        %h2
-          Store
-      #page-title.page-title.pure-u-1
+    %section
       = yield
-
-    .footer
-      .legal.pure-g
-        .pure-u-1.u-sm-1-2
-          .legal-license
-            Indie Craft Store
-            %br/
-            %a{:href => "https://github.com/MOctavio/indieCraft"} Mario Octavio Jimenez - GitHub Project
-          .legal-info
-            Based on
-            %a{:href => "https://pragprog.com/book/rails4/agile-web-development-with-rails-4", :title => "Agile Web Development with Rails 4"} Agile Web Development with Rails 4
-            %br/
-            App icon made by
-            %a{:href => "http://www.freepik.com", :title => "Freepik"} Freepik
-            from
-            %a{:href => "http://www.flaticon.com", :title => "Flaticon"} www.flaticon.com
-            is licensed under
-            %a{:href => "http://creativecommons.org/licenses/by/3.0/", :title => "Creative Commons BY 3.0"} CC BY 3.0
+    %footer
+      %article.left-panel
+        %p Indie Craft Store
+        %p by Mario Octavio Jimenez
+      %article.right-panel
+        %p
+          Source code on
+          %a{:href => "https://github.com/MOctavio/indieCraft"} GitHub - Project
+        %p
+          App icon made by
+          %a{:href => "http://www.freepik.com", :title => "Freepik"} Freepik
+          from
+          %a{:href => "http://www.flaticon.com", :title => "Flaticon"} www.flaticon.com
+          is licensed under
+          %a{:href => "http://creativecommons.org/licenses/by/3.0/", :title => "Creative Commons BY 3.0"} CC BY 3.0

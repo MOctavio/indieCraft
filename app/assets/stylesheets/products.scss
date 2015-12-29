@@ -1,19 +1,55 @@
 @import "variables";
+$nav-bar-span: 40px;
 .products {
+  .product {
+    margin: 0 2em 2em;
+    padding: 2em;
+    text-align: center;
+    background-color: $color-base-4;
+    border-bottom: 42px solid $color-base;
+    p {
+      font-size: 1em;
+      font-weight: 400;
+      color: rgb(26, 26, 26);
+      line-height: 1.8em;
+      text-align: left;
+      margin-left: 136px;
+    }
+    p.title {
+      margin-top: 10px;
+      font-size: 1.375em;
+      line-height: normal;
+      margin-left: auto;
+      text-align: center;
+      color: rgb(26, 26, 26);
+    }
+    p.price {
+      float: left;
+      font-size: 1.8em;
+      line-height: normal;
+      margin-left: auto;
+      font-weight: 300;
+      text-align: center;
+      color: rgb(26, 26, 26);
+    }
+    button,
+    a.pure-button {
+      border-radius: 3px;
+      margin-left: 15px;
+    }
+  }
   .pure-gutter > * {
     margin: 15px;
   }
   .img-box {
-    height: 235px;
-    display: block;
     margin-left: auto;
     margin-right: auto;
   }
-  .list_description {
+  .list-description {
     color: darken($gray, 60%);
     height: 265px;
     > p {
-      margin-left: 40px;
+      margin-left: 20px;
       &.title {
         font-weight: semi-bold;
         font-size: larger;
@@ -24,15 +60,12 @@
         display: inline;
       }
     }
-    > form, input {
+    > form,
+    input {
       display: inline;
     }
   }
   .list-options {
     padding: 15px;
-  }
-  [class*='pure-u'] {
-    border-bottom: solid 1px;
-    border-color: $gray;
   }
 }

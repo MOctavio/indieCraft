@@ -1,22 +1,31 @@
--# .pure-g
--#   .page-title.pure-u-1
--#     - if session[:counter] > 1
--#       We have #{session[:counter]} deals for a limited-time sale.
--#     - else
--#       New deals and more every day. Keep visiting us to find more about.
+.pure-g
+  %section.hero
+    .brand
+      %p.hero-title
+        Indie Craft
+        =image_tag('indieCraftStorex64.png')
+      %p.hero-subtitle Store
 - if notice
   %p.pure-u-1#notice= notice
-.products
+.products.content-wrapper.pure-g
   -cache ['store', Product.latest] do
     - @products.each do |product|
       -cache ['product', product] do
-        .product
-          .pure-u-2-5.pure-gutter
+        .pure-u-1-2
+          .product
             = image_tag(product.image_url, class: 'pure-img img-box')
-          .pure-u-3-5.list_description.pure-gutter
-            %p.title= product.title
-            %p= truncate(strip_tags(product.description), length: 180)
+            %p.title= truncate(strip_tags(product.title), length: 30)
             %p.price= number_to_currency(product.price)
+            %p= truncate(strip_tags(product.description), length: 90)
             = button_to line_items_path(product_id: product),
-              :class => "button-small pure-button pure-button-secondary", remote: true do
+              :class => "button-small pure-button", remote: true do
               #{fa_icon "cart-plus"} Add to cart
+%section.description-panel
+  %article
+    %p
+      Lorem ipsum dolor sit amet, ea cum nostro tractatos, essent menandri et cum. Te quo eirmod copiosae assentior, oportere qualisque iudicabit et ius. Doming officiis sit eu. Nibh tacimates definiebas id nec, at nam dolorem pertinacia percipitur. Ei quaestio comprehensam definitionem mel. Nostrud ceteros definitionem id mel, ad sit stet natum tollit, ad usu verterem definiebas.
+      %br/
+      Postulant cotidieque persequeris sea ut, an sit veniam dolore, pri nostrud iuvaret principes at.
+%section.page-footer
+  %article.left-panel
+  %article.right-panel

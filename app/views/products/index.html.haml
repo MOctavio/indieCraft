@@ -1,17 +1,19 @@
-.pure-u-1
-  %p= link_to 'New product', new_product_path, :class => "button-small pure-button"
-- @products.each do |product|
-  .pure-u-2-5
-    .img-box
-      %p= image_tag(product.image_url, class: 'pure-img img-box')
-  .pure-u-2-5
-    .list_description
-      %p.title= product.title
-      %p= truncate(strip_tags(product.description), length: 180)
-      %p.price= number_to_currency(product.price)
-  .pure-u-1-5
-    .list-options
-      %p= link_to 'Show', product, :class => "button-small pure-button pure-button-primary"
-      %p= link_to 'Edit', edit_product_path(product), :class => "button-small pure-button"
-      %p= link_to 'Destroy', product, :class => "button-small pure-button", method: :delete,
-        data: { confirm: 'Are you sure?' }
+%nav.pure-menu.pure-menu-horizontal.sub-menu
+  %ul.pure-menu-list
+    %li.pure-menu-item
+      = link_to new_product_path, class: "pure-menu-link" do
+        #{fa_icon "plus"} New product
+.products.content-wrapper.pure-g
+  - @products.each do |product|
+    .pure-u-2-5
+      .img-box
+        %p= image_tag(product.image_url, class: 'pure-img img-box')
+    .pure-u-2-5
+      .list-description
+        %p.title=  product.title
+        %p= truncate(strip_tags(product.description), length: 180)
+        %p.price= number_to_currency(product.price)
+    .pure-u-1-5
+      .list-options
+        = link_to edit_product_path(product), class: "pure-button" do
+          #{fa_icon "edit"} Edit

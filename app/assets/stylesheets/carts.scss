@@ -1,5 +1,10 @@
 @import "variables";
 .carts {
+  .products {
+    .product {
+      width: 100%;
+    }
+  }
   .total-price {
     padding: 0.5em 1em;
     float: right;

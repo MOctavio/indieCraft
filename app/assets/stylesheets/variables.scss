@@ -1,20 +1,19 @@
-$gray: rgb(233, 233, 233);
-$dark-gray: darken($gray, 60%);
-$light-gray: lighten($gray, 20%);
+$lighter-gray: darken(white, 5%);
+$light-gray: darken(white, 20%);
+$gray: darken(white, 40%);
+$dark-gray: darken(white, 60%);
+$darker-gray: darken(white, 80%);
 
-$color-base: rgb(34, 149, 139);
+$color-base: rgb(65, 141, 143);
 $color-base-dark: darken($color-base, 20%);
 $color-base-light: lighten($color-base, 20%);
 
-$color-base-2: rgb(57,57,58);
+$color-base-2: rgb(236, 149, 101);
 $color-base-2-light: lighten($color-base-2, 20%);
 
 $color-base-3: rgb(155,155,147);
 $color-base-3-light: lighten($color-base-3, 20%);
 
-$color-base-4: rgb(233,210,244);
+$color-base-4: rgb(241, 241, 235);
 $color-base-4-dark: darken($color-base-4, 20%);
 $color-base-4-light: lighten($color-base-4, 20%);
-
-$color-base-5: rgb(193,176,152);
-$color-base-5-light: lighten($color-base-5, 20%);

@@ -1,18 +1,19 @@
 .product
-  .pure-u-2-5.pure-gutter
+  .pure-u-2-5
     = image_tag(line_item.product.image_url, class: 'pure-img img-box')
-  .pure-u-3-5.list_description.pure-gutter
+  .pure-u-3-5.list-description
     %p.title
       = line_item.product.title
     %p= truncate(strip_tags(line_item.product.description), length: 100)
-    %p#line_item Quantity: #{select_tag "line_item_quantity",                           |
+    %p Quantity: #{select_tag "line_item_quantity",                                     |
       options_for_select(quantity_options, selected = line_item.quantity),              |
-      :onchange => "updateQuantity()",                                                  |
+      :onchange => "updateQuantity(this)",                                              |
       data: {                                                                           |
         quantity: line_item.quantity,                                                   |
         url: url_for(:controller=>'line_items', :action=>'update', :id => line_item)}}  |
     %p Price: #{number_to_currency(line_item.product.price)}
     %p.price
       Subtotal: #{number_to_currency(line_item.total_price)}
-      = button_to 'Remove item', line_item, :class => "button-small pure-button", method: :delete,
+      = button_to 'Remove item', line_item, :class => "button-small pure-button pure-button-secondary", method: :delete,
         data: { confirm: 'Are you sure?' }
+      %div
