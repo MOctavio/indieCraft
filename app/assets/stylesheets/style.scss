@@ -223,6 +223,17 @@ nav.sub-menu {
   width: 100%;
   height: $footer-height * 2;
   background-color: $lighter-gray;
+  section {
+    margin: 0 auto;
+    max-width: 980px;
+    padding-top: 45px;
+    article {
+      max-width: 43%;
+      float: left;
+      margin: 0 2em 2em;
+      text-align: center;
+    }
+  }
 }
 footer {
   width: 100%;
