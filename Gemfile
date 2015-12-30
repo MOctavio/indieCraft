@@ -10,7 +10,7 @@ gem "bourbon"
 # HAML templating language (http://haml.info)
 gem "haml-rails"
 # Font-Awesome Sass gem (https://github.com/FortAwesome/font-awesome-sass)
-gem 'font-awesome-rails'
+gem 'font-awesome-rails', '~> 4.5.0.0'
 # Pure CSS for Rails Asset Pipeline
 gem 'pure-css-rails', '~> 0.6.0'
 # Use Uglifier as compressor for JavaScript assets
