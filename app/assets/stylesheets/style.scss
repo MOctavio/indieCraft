@@ -38,6 +38,17 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
+  a {
+    color: white;
+    border-bottom: 1px dashed;
+    border-color: white;
+    &:visited {
+      color: inherit;
+    }
+    &:hover {
+      color: inherit;
+    }
+  }
 }
 form {
   margin-bottom: $nav-bar-span;
