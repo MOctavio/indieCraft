@@ -1,0 +1,17 @@
+= form_for @user, html: {class: "pure-form pure-form-aligned"} do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+
+  .pure-control-group
+    = f.label :name
+    = f.text_field :name, size: 40
+  .pure-control-group
+    = f.label :password
+    = f.password_field :password, size: 40, required: true
+  .pure-control-group
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation, size: 40, required: true

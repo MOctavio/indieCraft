@@ -1,0 +1,11 @@
+%nav.pure-menu.pure-menu-horizontal.sub-menu
+  %ul.pure-menu-list
+    %li.pure-menu-item
+      = link_to users_path, class: "pure-menu-link" do
+        #{fa_icon "times-circle-o"} Cancel edit
+    %li.pure-menu-item
+      = link_to "", :onclick=>"$('.pure-form').submit()" do
+        #{fa_icon "folder-o"} Save edit
+.content-wrapper.pure-g
+  .pure-u-1.center
+    = render 'form'

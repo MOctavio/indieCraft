@@ -1,0 +1,19 @@
+%nav.pure-menu.pure-menu-horizontal.sub-menu
+  %ul.pure-menu-list
+    %li.pure-menu-item
+      = link_to new_user_path, class: "pure-menu-link" do
+        #{fa_icon "plus"} New user
+.content-wrapper.pure-g
+  - if notice
+    %p.pure-u-1#notice= notice
+  - @users.each do |user|
+    .pure-u-1-3
+      %p.label User name:
+    .pure-u-1-3
+      %p= user.name
+    .pure-u-1-3
+      .list-options
+        = link_to edit_user_path(user), class: "pure-button" do
+          #{fa_icon "edit"} Edit
+        = link_to user, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "pure-button" do
+          #{fa_icon "trash-o"} Delete
