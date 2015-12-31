@@ -15,9 +15,7 @@ class ProductsControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:products)
-    assert_select '#main-menu', minimun: 1
-    assert_select '.list_description p', minimun: 3
-    assert_select '.list_description .price', /\$[,\d]+\.\d\d/
+    assert_select 'p.price', /\$[,\d]+\.\d\d/
   end
 
   test "should get new" do
@@ -36,9 +34,7 @@ class ProductsControllerTest < ActionController::TestCase
   test "should show product" do
     get :show, id: @product
     assert_response :success
-    assert_select '#main-menu', minimun: 1
-    assert_select '.list_description p', minimun: 3
-    assert_select '.list_description .price', /\$[,\d]+\.\d\d/
+    assert_select 'p.price', /\$[,\d]+\.\d\d/
   end
 
   test "should get edit" do
@@ -52,6 +48,7 @@ class ProductsControllerTest < ActionController::TestCase
   end
 
   test "should destroy product" do
+    @product.line_items.destroy_all
     assert_difference('Product.count', -1) do
       delete :destroy, id: @product
     end
