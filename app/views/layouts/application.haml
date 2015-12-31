@@ -8,8 +8,9 @@
   %body{class: "#{controller.controller_name} #{action_name}"}
     %nav.pure-menu.pure-menu-open.pure-menu-horizontal.fixed-navbar
       %a.pure-menu-heading
-        =image_tag('indieCraftStorex24.png', class: "brand")
-        .brand Indie Craft
+        .brand.disable-selection
+          %span.icon-indieCraft-logo
+          Indie Craft
       %ul.pure-menu-list
         %li.pure-menu-item
           = link_to 'Store', store_path, class:  "pure-menu-link pure-menu-selected"

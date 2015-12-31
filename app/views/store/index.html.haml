@@ -2,8 +2,8 @@
   %section.hero
     .brand
       %p.hero-title
+        %span.icon-indieCraft-logo
         Indie Craft
-        =image_tag('indieCraftStorex64.png')
       %p.hero-subtitle Store
 - if notice
   %p.pure-u-1#notice= notice
@@ -18,7 +18,7 @@
             %p.price= number_to_currency(product.price)
             %p= truncate(strip_tags(product.description), length: 90)
             = button_to line_items_path(product_id: product),
-              :class => "button-small pure-button", remote: true do
+              :class => "button-small pure-button pure-button-secondary", remote: true do
               #{fa_icon "cart-plus"} Add to cart
 %section.description-panel
   %article
@@ -29,16 +29,16 @@
 %section.page-footer
   %section.pure-g
     %article.pure-u-1-2
-      .media-icon
+      .social-media-icon
         #{fa_icon "facebook"} Facebook
-      .media-icon
+      .social-media-icon
         #{fa_icon "google-plus"} Google
-      .media-icon
+      .social-media-icon
         #{fa_icon "instagram"} Instagram
     %article.pure-u-1-2
-      .media-icon
+      .social-media-icon
         #{fa_icon "pinterest-p"} Pinterest
-      .media-icon
+      .social-media-icon
         #{fa_icon "tumblr"} Tumblr
-      .media-icon
+      .social-media-icon
         #{fa_icon "twitter"} Twitter

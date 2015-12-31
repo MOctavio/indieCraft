@@ -20,6 +20,18 @@ a.pure-button-secondary {
  * General Settings
  * --------------------------
 */
+.disable-selection {
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer */
+  -khtml-user-select: none;
+  /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none;
+  /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none;
+  /* Disable Android and iOS callouts*/
+}
 html {
   position: relative;
   min-height: 100%;
@@ -60,6 +72,7 @@ form {
   margin: 0 auto;
   max-width: 980px;
   margin-top: 60px;
+  margin-bottom: 60px;
 }
 a {
   color: inherit;
@@ -117,10 +130,14 @@ nav.fixed-navbar {
     line-height: 24px; //img size
     vertical-align: middle;
     padding-right: 24px; //img size
-  }
-  img.brand {
-    float: left;
-    padding-right: 10px;
+    cursor: default;
+    color: $dark-gray;
+    span {
+      color: $color-base-2;
+    }
+    &:hover {
+      color: $dark-gray;
+    }
   }
 }
 .cart-link {
@@ -143,50 +160,31 @@ nav.sub-menu {
   position: relative;
   float: left;
   width: 100%;
-  height: 335px;
+  height: 215px;
   margin-top: $nav-bar-span;
-  background: url(indieCraftStore.jpg) $color-base;
+  background: $color-base;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left bottom;
   .brand {
+    padding-top: 10px;
     position: absolute;
-    top: 79px;
-    right: 11%;
-    width: 34%;
-    height: 79px;
-    .hero-title {
+    width: 65%;
+    p {
       position: absolute;
-      top: 0;
       right: 0;
-      width: 75%;
-      font-size: 54px;
+      color: $lighter-gray;
+      letter-spacing: 2px;
+    }
+    .hero-title {
+      font-size: 60px;
       font-weight: 600;
-      line-height: 1.38;
-      text-align: right;
-      color: $color-base-2;
-      img {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 320px;
-        width: 64px;
-        height: 54px;
-        overflow: hidden;
-      }
     }
     .hero-subtitle {
-      position: absolute;
-      top: 90px;
-      right: 0;
-      width: 75%;
+      top: 105px;
       font-style: italic;
       font-size: 24px;
-      font-weight: 300;
       line-height: 1.38;
-      text-align: right;
-      letter-spacing: 2px;
-      color: $lighter-gray;
     }
   }
 }
@@ -197,7 +195,7 @@ nav.sub-menu {
 */
 .description-panel {
   height: $footer-height * 3;
-  background-color: $color-base-2;
+  background-color: $color-base;
   article {
     margin-left: 10%;
     width: 80%;
@@ -249,7 +247,7 @@ nav.sub-menu {
 footer {
   width: 100%;
   height: $footer-height;
-  background-color: $color-base;
+  background-color: $darker-gray;
   padding-top: 12px;
   p {
     font-size: 0.875em;
