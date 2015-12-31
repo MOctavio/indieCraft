@@ -5,6 +5,9 @@ $footer-height: 90px;
  * PureCss Custom
  * --------------------------
 */
+.pure-button {
+  min-width: 100px;
+}
 .pure-button-primary,
 a.pure-button-primary {
   background-color: $color-base;
@@ -98,6 +101,7 @@ a {
   }
 }
 #notice {
+  text-align: center;
   color: $dark-gray;
   font-size: 1em;
 }

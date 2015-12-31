@@ -17,3 +17,9 @@
       .list-options
         = link_to edit_product_path(product), class: "pure-button" do
           #{fa_icon "edit"} Edit
+        %br
+        %br
+        = link_to product, :method => :delete, |
+          :data => { :confirm => 'Are you sure?' }, |
+          class: "pure-button" do
+          #{fa_icon "trash-o"} Delete

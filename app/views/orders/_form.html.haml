@@ -1,11 +1,11 @@
 = form_for @order, html: {class: "pure-form pure-form-aligned"} do |f|
   - if @order.errors.any?
-    .pure-u-1
-      #error_explanation
-        %h2= "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:"
-        %ul
-          - @order.errors.full_messages.each do |msg|
-            %li= msg
+    #error_explanation
+      %h2= "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:"
+      %ul
+        - @order.errors.full_messages.each do |msg|
+          %li= msg
+
   .pure-control-group
     = f.label :name
     = f.text_field :name, size: 40
@@ -20,4 +20,4 @@
     = f.select :pay_type, Order::PAYMENT_TYPES,
         prompt: 'Select a payment method'
   .pure-controls
-    = f.submit 'Place Order', class: "pure-button pure-button-primary"
+    = f.submit 'Place Order', class: "pure-button pure-button-secondary"
