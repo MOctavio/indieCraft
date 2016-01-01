@@ -1,28 +1,13 @@
-== README
+== Indie Craft Store
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is based on a fictional store that sells independent crafts. The application is capable of registering products, display them in the store page and add them to a shopping cart to submit the order whenever the user wants to. The application demo it's hosted under http://indiecraft.heroku.com/ as a demo, if you want to play arround please feel free to do so, login as admin with user 'jarvis' password 'secret'.
 
-Things you may want to cover:
+This application relies on:
 
-* Ruby version
+* Rails version 4.2.3
+* Font Awesome 4.5.0.0
+* PureCSS 0.6.0
 
-* System dependencies
+The design is simple and emulates a real site, however a lot of generic text 'Lorem ipsum...' can be found, also it includes links to social media that are 'disabled', the main goal was to achieve a functional site making use of Rails 4 and not to build a real site to sell.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+All test are in place and passed, make sure to run <tt>rake test</tt> to run them.
