@@ -1,0 +1,14 @@
+.content-wrapper.pure-g
+  .pure-u-1.center
+    - if flash[:alert]
+      %p#notice= flash[:alert]
+    = form_tag({},{class: "pure-form pure-form-aligned"}) do
+      %legend Please Log In
+      .pure-control-group
+        = label_tag :name, 'User name:'
+        = text_field_tag :name, params[:name]
+      .pure-control-group
+        = label_tag :password, 'Password:'
+        = password_field_tag :password, params[:password]
+      .pure-controls
+        = submit_tag "Login", class: "pure-button pure-button-primary"

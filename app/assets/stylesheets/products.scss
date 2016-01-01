@@ -1,6 +1,9 @@
 @import "variables";
 $nav-bar-span: 40px;
 .products {
+  &.content-wrapper {
+    // display: flex;
+  }
   .product {
     margin: 0 2em 2em;
     padding: 2em;

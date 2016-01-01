@@ -5,6 +5,9 @@ $footer-height: 90px;
  * PureCss Custom
  * --------------------------
 */
+.pure-g {
+  letter-spacing: normal;
+}
 .pure-button {
   min-width: 100px;
 }
@@ -18,7 +21,12 @@ a.pure-button-secondary {
   background-color: $color-base-2;
   color: white;
 }
-
+.pure-form-aligned .pure-control-group label {
+  text-align: left;
+}
+.pure-form legend {
+  margin-bottom: 25px;
+}
 /* --------------------------
  * General Settings
  * --------------------------
@@ -71,11 +79,19 @@ form {
 .center {
   text-align: center;
 }
+.left {
+  text-align: left;
+}
+.display-block {
+  display: block;
+}
 .content-wrapper {
   margin: 0 auto;
   max-width: 980px;
   margin-top: 60px;
   margin-bottom: 60px;
+
+  // display: block;
 }
 a {
   color: inherit;
@@ -144,7 +160,7 @@ nav.fixed-navbar {
     }
   }
 }
-.cart-link {
+.right-link-menu {
   float: right;
   padding-top: 3px;
 }

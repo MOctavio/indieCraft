@@ -3,6 +3,7 @@ class LineItemsController < ApplicationController
   before_action :set_cart, only: [:create, :update, :destroy]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token, only: :update
+  skip_before_action :authorize, only: :create
 
   # GET /line_items
   # GET /line_items.json
@@ -47,7 +48,7 @@ class LineItemsController < ApplicationController
   def update
     respond_to do |format|
       if @line_item.update(line_item_params)
-        format.js { render :template => 'line_items/create', layout: false }
+        format.js { render template: 'line_items/create', layout: false }
         format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
         format.json { render :show, status: :ok, location: @line_item }
       else

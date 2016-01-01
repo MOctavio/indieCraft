@@ -14,17 +14,23 @@
       %ul.pure-menu-list
         %li.pure-menu-item
           = link_to 'Store', store_path, class:  "pure-menu-link pure-menu-selected"
-        %li.pure-menu-item
-          = link_to 'Products', products_path, class: "pure-menu-link"
-        %li.pure-menu-item
-          = link_to 'Users', users_path, class: "pure-menu-link"
-      %ul.pure-menu-list.cart-link
+        -if session[:user_id]
+          %li.pure-menu-item
+            = link_to 'Products', products_path, class: "pure-menu-link"
+          %li.pure-menu-item
+            = link_to 'Users', users_path, class: "pure-menu-link"
+      %ul.pure-menu-list.right-link-menu
         %li.pure-menu-item
           -if @cart
             = link_to cart_path(@cart), id: 'cart-container', class: "pure-menu-link" do
               #{fa_icon "shopping-cart"}
               %span#cart= pluralize @cart.items_quantity, 'item'
               in Cart
+        %li.pure-menu-item
+          -if session[:user_id]
+            = link_to "Logout", logout_path, :class => "pure-menu-link", method: :delete
+          -else
+            = link_to "Log in", login_path, :class => "pure-menu-link"
     %section
       = yield
     %footer
