@@ -1,3 +1,5 @@
+User.create! name: 'jarvis', password: 'secret', password_confirmation: 'secret'
+
 Product.delete_all
 Product.create!(title: 'Wooden Doormat',
                 description:
