@@ -5,9 +5,10 @@ $nav-bar-span: 40px;
     // display: flex;
   }
   .product {
+    background-color: $lighter-gray;
     margin: 0 2em 2em;
     padding: 2em;
-    border-bottom: 42px solid $lighter-gray;
+    border-bottom: 42px solid $light-gray;
     border-radius: 5px;
     p {
       font-size: 1em;
