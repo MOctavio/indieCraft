@@ -1,6 +1,7 @@
 .content-wrapper.pure-g.display-block
-  %h1
-    %span.icon-indieCraft-logo
-    Indie Craft Store 
-  %p It's #{Time.now}
-  %p We have #{pluralize(@total_orders, "order")}.
+  %h2 Processed Orders
+  %p We have #{pluralize(@total_orders, "order")} placed to be delivered.
+
+  %h2 Site administration
+  = link_to 'Products', products_path, class: "button-small pure-button pure-button"
+  = link_to 'Users', users_path, class: "button-small pure-button pure-button"

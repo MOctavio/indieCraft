@@ -16,9 +16,7 @@
           = link_to 'Store', store_path, class:  "pure-menu-link pure-menu-selected"
         -if session[:user_id]
           %li.pure-menu-item
-            = link_to 'Products', products_path, class: "pure-menu-link"
-          %li.pure-menu-item
-            = link_to 'Users', users_path, class: "pure-menu-link"
+            = link_to 'Administration', admin_path, class: "pure-menu-link"
       %ul.pure-menu-list.right-link-menu
         %li.pure-menu-item
           -if @cart
