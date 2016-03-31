@@ -13,6 +13,9 @@
         %p.title=  product.title
         %p= truncate(strip_tags(product.description), length: 180)
         %p.price= number_to_currency(product.price)
+        %p
+          = link_to who_bought_product_url(product.id,:format => :atom), class: "pure-menu-button" do
+            #{fa_icon "feed"} Atom Feed
     .pure-u-1-5
       .list-options
         = link_to edit_product_path(product), class: "pure-button" do
